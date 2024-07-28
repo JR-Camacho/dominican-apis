@@ -21,4 +21,11 @@ def get_all_rnc():
     if not os.path.exists(data_route):
         print("No se encontró el archivo.")
         RNC.get_rnc_list()
-    RNC.extract_data()
+    result = RNC.extract_data()
+
+    # Convertir el DataFrame a un arreglo de objetos JSON
+    json_result = result.to_json(orient='records')
+
+    # Imprimir el resultado
+    # return json_result
+    return {"all rnc data": json_result}

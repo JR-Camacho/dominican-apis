@@ -64,7 +64,6 @@ class RNC:
                 df = pd.read_csv(ajusted_extract_location + '/TMP/DGII_RNC.TXT',
                                  delimiter='|', encoding='latin1')  # Usar el delimitador '|'
                 print("DataFrame cargado con éxito.")
-                print(df.head())  # Mostrar las primeras filas del DataFrame
             except UnicodeDecodeError as e:
                 print(f"Error de decodificación: {e}")
         else:
@@ -80,4 +79,5 @@ class RNC:
                 'Borrar4'], axis=1, inplace=True)
 
         # return the dataframe
+        print("Dataframe listo para ser usado.")
         return df
